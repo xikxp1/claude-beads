@@ -28,7 +28,7 @@ For each technology, derive its key: use the `key` field if present, otherwise f
 
 For each technology question:
 
-1. **Check local docs first**: Derive the technology key and check if `.claude-beads/docs/<key>/` exists. If it does, use `Glob` to find relevant files and `Grep` to search for the specific topic within that directory. Read the matching files. If the local docs answer the question, use them and skip online search.
+1. **Check local docs first**: Derive the technology key and check if `.claude-beads/docs/<key>/` exists. If it does, use `Glob` to find relevant files and `Grep` to search for the specific topic within that directory. Read the matching files. If the local docs answer the question, use them and skip online search. If searching for markdown files, include .mdx extension as well. All of library documentation is done via MDX for opensource projects.
 2. **Official docs**: If local docs are absent or insufficient, use `WebFetch` on the `docs` URL from the config to find the relevant page.
 3. **Search for specifics**: Use `WebSearch` with targeted queries like `"<technology> <specific API or concept>"`.
 4. **Check examples**: If the config includes an `examples` URL, fetch relevant example code.
