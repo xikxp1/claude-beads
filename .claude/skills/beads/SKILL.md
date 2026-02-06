@@ -194,9 +194,14 @@ Read `BEAD_ROOT` from state.json and use it in all paths below.
    Review the PR diff with: git diff main...HEAD
    Write review to <BEAD_ROOT>/artifacts/review.md.
    ```
-2. After completion, read `review.md` and check the status field.
-   - If **PASS**: advance to user final review.
-   - If **FAIL** and `iterations.developer_validator < 3`: increment counter, send issues back to developer, then re-invoke validator.
+2. After completion, read `review.md` and check the status and issues.
+   - If **PASS with no warnings/suggestions**: advance to user final review.
+   - If **PASS with non-blocking issues** (warnings or suggestions only):
+     - Send the issue list to the **developer** to fix.
+     - After developer completes, run **automated checks only** (tests, linting, typechecking — whatever the project uses). Do NOT re-invoke the validator.
+     - If automated checks pass, advance to user final review.
+     - If automated checks fail, send failures back to developer to fix (up to the `developer_validator` loop limit), then re-run automated checks.
+   - If **FAIL** (critical issues) and `iterations.developer_validator < 3`: increment counter, send issues back to developer, then re-invoke validator.
    - If **FAIL** and limit reached: escalate to user with the issue list.
 3. **USER CHECKPOINT — final-review**: Present `review.md` and PR link. Ask user to approve merge.
    - If **approved**: set phase to `"complete"`. Congratulate and provide the PR link.
