@@ -44,6 +44,7 @@ Write `.claude-beads/config.yml` with the confirmed stack. For each technology, 
 ```yaml
 stack:
   - name: <tech>
+    key: <identifier>       # optional — defaults to name; used as docs/<key> directory
     docs: <official docs URL>
 ```
 

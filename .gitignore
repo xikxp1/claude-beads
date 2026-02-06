@@ -5,5 +5,8 @@
 # Generated output
 .claude-beads/viz.html
 
+# Local documentation (potentially large, user-managed)
+.claude-beads/docs/
+
 # OS
 .DS_Store

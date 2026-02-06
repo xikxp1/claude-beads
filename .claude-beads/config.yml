@@ -3,9 +3,11 @@
 
 stack:
   # - name: svelte
+  #   key: svelte          # optional — defaults to name; used as docs/<key> directory
   #   docs: https://svelte.dev/docs
   #   examples: https://github.com/sveltejs/examples
   # - name: tailwind
+  #   key: tailwind
   #   docs: https://tailwindcss.com/docs
 
 workflow:
