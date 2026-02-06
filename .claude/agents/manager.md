@@ -105,7 +105,7 @@ Create the branch and commit the current bead artifacts:
 ```bash
 git checkout -b beads/<task-id>/<short-description>
 git add <BEAD_ROOT>/ ARCHITECTURE.md
-git commit -m "beads(<task-id>): initialize bead with requirements, architecture, and plan"
+git commit -m "beads(<task-id>): initialize bead with requirements, architecture and plan"
 ```
 
 This initial commit captures the requirements, architecture, plan, subtask beads, and the project-level `ARCHITECTURE.md` so the feature branch starts with a clean baseline of all planning artifacts.
