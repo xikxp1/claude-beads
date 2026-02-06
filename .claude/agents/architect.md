@@ -53,6 +53,8 @@ The orchestrator will tell you the **bead root** path. All artifact paths are re
 
 ## Output
 
+### 1. Task Architecture (required)
+
 Write to `<BEAD_ROOT>/artifacts/architecture.md`:
 
 ```markdown
@@ -92,9 +94,45 @@ Write to `<BEAD_ROOT>/artifacts/architecture.md`:
 <!-- Technical risks and mitigations. Include complexity concerns. -->
 ```
 
+### 2. Project-Level Architecture (required)
+
+After writing the task-specific architecture, update the top-level `ARCHITECTURE.md` in the **project root**. This document describes the overall project architecture and is kept up-to-date across tasks.
+
+- If `ARCHITECTURE.md` does not exist yet, create it from scratch based on your codebase exploration.
+- If it already exists, read it first and **incrementally update** it to reflect any new components, data models, API boundaries, or structural changes introduced by this task.
+- Do NOT remove sections that describe existing parts of the system unrelated to the current task.
+- Keep the document concise and current — it should serve as a living reference for anyone onboarding to the project.
+
+Use this structure (adapt sections as appropriate for the project):
+
+```markdown
+# Architecture
+
+## Overview
+<!-- What the project does, high-level system description, ASCII diagram if helpful. -->
+
+## Tech Stack
+<!-- Languages, frameworks, key libraries, infrastructure. -->
+
+## Project Structure
+<!-- Directory layout with brief descriptions of each top-level directory. -->
+
+## Component Map
+<!-- Major components/modules, their responsibilities, and how they interact. -->
+
+## Data Model
+<!-- Core entities, relationships, storage. -->
+
+## API Boundaries
+<!-- External and internal API surfaces. -->
+
+## Key Design Decisions
+<!-- Important architectural choices and their rationale. -->
+```
+
 ## Rules
 
-- Do NOT modify any files outside the bead's `artifacts/` directory.
+- Do NOT modify any files outside the bead's `artifacts/` directory and the project-root `ARCHITECTURE.md`.
 - Do NOT write implementation code.
 - Do NOT invent requirements — if something is unclear, ask via Clarification Questions.
 - Prefer reusing existing project patterns over introducing new ones.

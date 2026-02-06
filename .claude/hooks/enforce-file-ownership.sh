@@ -44,11 +44,14 @@ case "$AGENT" in
     ;;
 
   architect)
-    # Can only write to bead artifacts
+    # Can write to bead artifacts and project-root ARCHITECTURE.md
     if is_bead && is_artifact; then
       exit 0
     fi
-    block "Architect agent can only write to <BEAD_ROOT>/artifacts/"
+    if [[ "$(basename "$FILE_PATH")" == "ARCHITECTURE.md" ]] && ! is_beads_dir; then
+      exit 0
+    fi
+    block "Architect agent can only write to <BEAD_ROOT>/artifacts/ and project-root ARCHITECTURE.md"
     ;;
 
   manager)

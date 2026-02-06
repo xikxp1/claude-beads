@@ -125,6 +125,7 @@ Read `BEAD_ROOT` from state.json and use it in all paths below.
    The bead root is <BEAD_ROOT>.
    Read requirements from <BEAD_ROOT>/artifacts/requirements.md.
    Write architecture to <BEAD_ROOT>/artifacts/architecture.md.
+   Also update the project-root ARCHITECTURE.md with any structural changes.
    Read the summary at <BEAD_ROOT>/summaries/post-requirements.md if it exists.
    ```
 2. After completion, check if the architect raised clarification questions (look for a `Clarification Questions` section in architecture.md).
