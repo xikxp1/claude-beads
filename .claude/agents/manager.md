@@ -101,10 +101,14 @@ After creating all subtask beads, update the root bead at `<BEAD_ROOT>/bead.json
 
 ### 3. Feature Branch
 
-Create the branch using git:
+Create the branch and commit the current bead artifacts:
 ```bash
 git checkout -b beads/<task-id>/<short-description>
+git add <BEAD_ROOT>/ ARCHITECTURE.md
+git commit -m "beads(<task-id>): initialize bead with requirements, architecture, and plan"
 ```
+
+This initial commit captures the requirements, architecture, plan, subtask beads, and the project-level `ARCHITECTURE.md` so the feature branch starts with a clean baseline of all planning artifacts.
 
 ## Rules
 
