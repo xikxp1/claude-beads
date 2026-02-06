@@ -1,0 +1,9 @@
+# Volatile workflow state (recreated per session)
+.claude-beads/state.json
+.claude-beads/audit.jsonl
+
+# Generated output
+.claude-beads/viz.html
+
+# OS
+.DS_Store

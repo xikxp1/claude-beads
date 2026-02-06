@@ -1,0 +1,25 @@
+# Claude-Beads Project Configuration
+# Edit this file to match your project's tech stack and workflow preferences.
+
+stack:
+  # - name: svelte
+  #   docs: https://svelte.dev/docs
+  #   examples: https://github.com/sveltejs/examples
+  # - name: tailwind
+  #   docs: https://tailwindcss.com/docs
+
+workflow:
+  loop_limits:
+    analyst_architect: 2
+    analyst_manager: 2
+    developer_validator: 3
+    developer_test_engineer: 1
+  user_checkpoints:
+    - post-requirements
+    - post-architecture
+    - post-planning
+    - final-review
+
+branch:
+  strategy: feature-branch
+  naming: "beads/{task-id}/{short-description}"
